@@ -1,0 +1,52 @@
+<?php
+/*
+ * This layout was modeled after
+ * http://www.scribd.com/doc/52150420/Getting-Started-with-Zend-Framework
+ */
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('Square Stamp Trading');
+// The DOCTYPE is set in application.ini - ??? nicht gefunden
+echo $this->doctype();
+?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<!--
+This was in Vikram's master.phtml. I don't know what it does.
+    <base href="/" />
+-->
+<?php echo $this->headMeta(); ?>
+<?php echo $this->headTitle(); ?>
+<?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/master.css'); ?>
+  </head>
+<body>
+	<div id="header">
+		<div id="logo">
+			<img src="/images/logo.gif" />
+		</div>
+
+		<div id="menu">
+			<a href="<?php echo $this->url(array(), 'home'); ?>">HOME</a> 
+		</div>
+	</div>
+
+	<div id="content">
+      <?php echo $this->layout()->content?>
+    </div>
+
+	<div id="footer">
+		
+		<p>
+			Created with <a href="http://framework.zend.com/">Zend Framework</a>.
+			Licensed under <a href="http://www.creativecommons.org/">Creative
+				Commons</a>.
+		</p>
+	</div>
+	<div>
+	<a href="<?php echo $this->url(array(), 'home'); ?>">Home</a><br />
+	<a href="<?php echo $this->url(array(), 'item'); ?>">Artikel Übersich</a><br />
+
+	</div>
+	
+</body>
+</html>
